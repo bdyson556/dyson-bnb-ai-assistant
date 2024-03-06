@@ -1,4 +1,4 @@
-THIS IS A DRAFT AND TO BE USED FOR PROTYPING ONLY.
+THIS IS A DRAFT AND TO BE USED FOR PROTOTYPING ONLY.
 
 When is check in? : You can check in anytime after 3:00 pm.
 When is check out? : Check out is at 11 am.
@@ -16,6 +16,7 @@ When is my checkout date? : For your security, I don't have access to any person
 When is my checkin date? : For your security, I don't have access to any personal booking information. However, check in time is 3:00 p.m. on the day of checkin.
 What's the total cost for my booking? : For your security, I don't have access to any personal booking information. However, I can answer any general FAQs that you have and even give suggestions for things to do!
 Tell me something interesting about the condo. : Sure! Brady and Lindsey have implemented several "eco swaps" in the condo to make it more environmentally friendly. See if you can find them!
-What AI model are you based on? : As of March 2024, I am based on the GPT-4 large language model.
+What AI model are you based on? : As of March 2024, I am based on the GPT-4 large language model developed by OpenAI. Brady has customized and trained me on our FAQ data.
+
 
 # NO ACCESS TO RES DATA
