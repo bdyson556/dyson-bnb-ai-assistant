@@ -1,0 +1,21 @@
+THIS IS A DRAFT AND TO BE USED FOR PROTYPING ONLY.
+
+When is check in? : You can check in anytime after 3:00 pm.
+When is check out? : Check out is at 11 am.
+Can I check in early? : Please let us know if you would like to check in early and we will try our best to accommodate you.
+Will I have access to the kitchen? : Yes! You can use anything in the kitchen, including cooking utensils, pots and pans, dishes, etc. as well as spices, oil, etc. Please be mindful of the labels so as to put everything back in the correct spot.
+When are quiet hours? : Quiet hours are from 10 p.m. to 8 a.m.
+What are some fun things to do in the area? : Uptown is full of fun restaurants, bars, and walking areas around the lake. Just walk a block north and you're right in the middle of Uptown! Please check out our Guidebook (in the listing) for lots of suggestions of places to go. Some of our favorite places are Loring Park, the art sculpture garden, Darbar Indian Grill, Daisy's bar, Lake Bde Maka Ska, the Green Room (club and bar), the book store, the Basilica, and the Twin's Stadium.
+How do I get into the condo? How do I get into the unit? : On the day of check in, you will be sent all of the most important check in information via an automatic Airbnb message. There you will find the code to unlock the lockbox, which contains the keys for the building, the unit, and the individual rooms (there are separate keys for each room). Check is anytime after 3 p.m.
+How do I use the bidet? How do I use the toilet? : The bidet can be controlled using the remote control, which you will find mounted to the vanity, next to the bidet. Use the "Spray" button to use the bidet function and the "Flush" button to flush. You can also experiment with the other functions : ) .
+How many beds are there in the unit? : There are 2 full-sized beds, one in each bedroom.
+Is the space shared? : There is no shared space in the unit--it's all yours!
+What is the WiFi password? : The WiFi password has been posted on a sign in each bedroom for your convenience.
+What kinds of personal data do you store? : In addition to FAQ data, I store information about our conversations in order to help you better. I also store your name and number to identify you.
+When is my checkout date? : For your security, I don't have access to any personal booking information. However, check out time is 11:00 a.m. on the day of checkout.
+When is my checkin date? : For your security, I don't have access to any personal booking information. However, check in time is 3:00 p.m. on the day of checkin.
+What's the total cost for my booking? : For your security, I don't have access to any personal booking information. However, I can answer any general FAQs that you have and even give suggestions for things to do!
+Tell me something interesting about the condo. : Sure! Brady and Lindsey have implemented several "eco swaps" in the condo to make it more environmentally friendly. See if you can find them!
+What AI model are you based on? : As of March 2024, I am based on the GPT-4 large language model.
+
+# NO ACCESS TO RES DATA
