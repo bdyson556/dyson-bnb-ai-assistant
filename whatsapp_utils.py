@@ -1,11 +1,11 @@
 import hashlib
 import hmac
 import logging
-import http
 import json
 import os
 import re
 import shelve
+import requests
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -56,6 +56,8 @@ def log_http_response(response):
     logging.info(f"Status: {response.status_code}")
     logging.info(f"Content-type: {response.headers.get('content-type')}")
     logging.info(f"Body: {response.text}")
+    logging.info(response.headers)
+
 
 
 def get_text_message_input(recipient, text):
@@ -83,44 +85,34 @@ def is_valid_whatsapp_message(body):
         and body["entry"][0]["changes"][0]["value"]["messages"][0]
     )
 
-
-# TODO: replace http with requests
-def send_whatsapp_response(data, phone_number_id):
-    conn = http.client.HTTPSConnection('graph.facebook.com')
-    headers = {'Content-Type': 'application/json'}
-    path = f'/v12.0/{phone_number_id}/messages?access_token={os.environ["WHATSAPP_TOKEN"]}'
-    conn.request("POST", path, body=data, headers=headers)
-    response = conn.getresponse()
-    res_body = response.read()
-    logger.info(f"statusCode: {response.status}")
-    logger.info(f"Response from WhatsApp API: {res_body}")
-
 # TODO: review below to see if above can be enhanced.
-# def send_message(data):
-#     headers = {
-#         "Content-type": "application/json",
-#         "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
-#     }
-#
-#     url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
-#
-#     try:
-#         response = requests.post(
-#             url, data=data, headers=headers, timeout=10
-#         )  # 10 seconds timeout as an example
-#         response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
-#     except requests.Timeout:
-#         logging.error("Timeout occurred while sending message")
-#         return jsonify({"status": "error", "message": "Request timed out"}), 408
-#     except (
-#         requests.RequestException
-#     ) as e:  # This will catch any general request exception
-#         logging.error(f"Request failed due to: {e}")
-#         return jsonify({"status": "error", "message": "Failed to send message"}), 500
-#     else:
-#         # Process the response as normal
-#         log_http_response(response)
-#         return response
+def send_whatsapp_response(data, phone_number_id):
+    headers = {
+        "Content-type": "application/json",
+        "Authorization": f"Bearer {os.environ['WHATSAPP_TOKEN']}"
+    }
+
+    url = f"https://graph.facebook.com/v19.0/{phone_number_id}/messages"
+    print(url)
+    print(phone_number_id)
+
+    try:
+        response = requests.post(
+            url, data=data, headers=headers, timeout=10
+        )  # 10 seconds timeout as an example
+        response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+    except requests.Timeout:
+        logging.error("Timeout occurred while sending message")
+        # return jsonify({"status": "error", "message": "Request timed out"}), 408
+    except (
+        requests.RequestException
+    ) as e:  # This will catch any general request exception
+        logging.error(f"Request failed due to: {e}")
+        # return jsonify({"status": "error", "message": "Failed to send message"}), 500
+    else:
+        # Process the response as normal
+        log_http_response(response)
+        return response
 
 
 def process_text_for_whatsapp(text):

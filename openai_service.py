@@ -1,13 +1,10 @@
 from openai import OpenAI
-import shelve
-from dotenv import load_dotenv
 import os
 import time
 import logging
 
-load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_KEY")
-OPENAI_ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID")
+OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
+OPENAI_ASSISTANT_ID = os.environ['OPENAI_ASSISTANT_ID']
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
