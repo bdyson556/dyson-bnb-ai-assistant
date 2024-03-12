@@ -29,5 +29,10 @@ class TestLambdaFunction(unittest.TestCase):
 
         lambda_handler(event, "")
 
+
+    def check_assistant(self):
+        pass
+
+
 if __name__ == "__main__":
     unittest.main()

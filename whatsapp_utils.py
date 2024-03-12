@@ -144,23 +144,6 @@ def store_thread(wa_id, thread_id):
         threads_shelf[wa_id] = thread_id
 
 
-# def process_whatsapp_message(body):
-#     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]
-#     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
-#
-#     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
-#     message_body = message["text"]["body"]
-#
-#     # response = generate_response(message_body)
-#
-#     # OpenAI Integration
-#     response = generate_response(message_body, wa_id, name)
-#     response = process_text_for_whatsapp(response)
-#
-#     data = get_text_message_input(current_app.config["RECIPIENT_WA_ID"], response)
-#     send_message(data)
-
-
 
 
 # Check if it's a WhatsApp status update

@@ -55,7 +55,7 @@ def lambda_handler(event, context):
             # OpenAI Integration
             # TODO activate new gen_response func
             response = generate_response(message_body, wa_id, name)
-            response = process_text_for_whatsapp(response)
+            # response = process_text_for_whatsapp(response)
 
             ## TODO
             data = json.dumps({  # How to send text messages (including msg formatting, etc.): https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-messages#text-messages
@@ -65,14 +65,11 @@ def lambda_handler(event, context):
                 # "type": "template",
                 # "template": {"name": "hello_world", "language": {"code": "en_US"}}
                 "type": "text",  # NOTE! In order to send text messages, user MUST have sent the number a message within 24 hours.
-                "text": {"preview_url": True, "body": "Hello from Brady's app!"}
-                # "text": {"body": "Hello from Brady's app!"}
-                # "text": {"body": "Hello from AWS Lambda!"}
+                "text": {"preview_url": True, "body": response}
             })
 
-            logger.info(f"Response to be sent:\n\t{data}")
-
             send_whatsapp_response(data, phone_number_id)
+            logger.info(f"Response to be sent:\n\t{data}")
 
             return {
                 'statusCode': 200,
